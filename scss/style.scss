@@ -1,9 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Bungee");;
+$main-font: 'Lobster', LtBrown, serif;
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: #66F2FF;
+  background: #1C6EA4;
+  background: -moz-linear-gradient(left, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  background: -webkit-linear-gradient(left, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  background: linear-gradient(to right, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  font-family: $main-font;
+}
+
+.twitch-logo{
+  text-align: center;
+  margin-top: 20px;
+
+  img {
+    width: 500px;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .title {
@@ -17,6 +38,7 @@ body {
 
 .buttons {
   text-align: center;
+  margin-bottom: 5px;
 
   .btn {
     color: rgb(255, 255, 255);
@@ -24,7 +46,7 @@ body {
     line-height: 21px;
     padding: 15px;
     border-radius: 9px;
-    font-family: Georgia, serif;
+    font-family: 'Bungee', LtBrown, serif;;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
@@ -32,7 +54,6 @@ body {
     font-variant-caps: normal;
     text-transform: none;
     background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
-    // box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 2px solid rgb(28, 110, 164);
     display: inline-block;
 
@@ -58,7 +79,11 @@ body {
     border: 2px solid #4A20D4;
     width: 500px;
     height: auto;
-    margin-top: 5px;
+    border-bottom: #FFFFFF;
+
+    &:hover {
+      opacity: 0.6;
+    }
 
     a {
       text-decoration: none;
@@ -67,6 +92,12 @@ body {
 
       &:hover {
         cursor: pointer;
+      }
+      &:visited{
+        color: inherit;
+      }
+      &:active{
+        color:inherit;
       }
     }
 
@@ -87,8 +118,8 @@ body {
       }
     }
 
-    .offline-status-logo{
-      img{
+    .offline-status-logo {
+      img {
         float: right;
       }
     }
