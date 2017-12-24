@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #66F2FF;
+}
+
+.title {
+  text-align: center;
+  font-size: 3em;
+}
+
+.content {
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons .btn {
+  color: white;
+  font-size: 21px;
+  line-height: 21px;
+  padding: 15px;
+  border-radius: 9px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  text-transform: none;
+  background-image: linear-gradient(to right, #1c6ea4 0%, #2388cb 50%, #144e75 100%);
+  border: 2px solid #1c6ea4;
+  display: inline-block;
+}
+
+.buttons .btn:hover {
+  background: #1C6EA4;
+  cursor: pointer;
+}
+
+.buttons .btn:active {
+  background: #144E75;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .content {
+  border: 2px solid #4A20D4;
+  width: 500px;
+  height: auto;
+  margin-top: 5px;
+}
+
+.container .content a {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.container .content a:hover {
+  cursor: pointer;
+}
+
+.container .content img {
+  width: 68px;
+  height: 68px;
+}
+
+.container .content .logo img {
+  float: left;
+}
+
+.container .content .online-status-logo img {
+  float: right;
+}
+
+.container .content .offline-status-logo img {
+  float: right;
+}
+
+.container .content .status {
+  margin-bottom: 0;
+}
+
+.container .online {
+  background-color: #44D449;
+  order: -1;
+}
+
+.container .offline {
+  background-color: #D44D24;
+}
