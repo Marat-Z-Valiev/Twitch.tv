@@ -24,7 +24,7 @@ userNames.forEach(function(name) {
             let onlineHtml = '<div class="content online"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.name + '</a><span class="online-status-logo"><img src="images/online-64.png"></span><p class="status">' + data.game + ': ' + data.status + '</p></div>';
             $('#content').append(onlineHtml);
           } else if (status === 'offline') {
-            let offlineHtml = '<div class="content offline"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.name + '</a><span class="online-status-logo"><img src="images/online-64.png"></span></div>';
+            let offlineHtml = '<div class="content offline"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.name + '</a><span class="offline-status-logo"><img src="images/offline-64.png"></div>';
 
             // <p class="status"><span class="offline-status-logo"><img src="images/offline-64.png"></span>Offline</p></div>';
             $('#content').append(offlineHtml);
