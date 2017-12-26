@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster");
-@import url("https://fonts.googleapis.com/css?family=Bungee");;
+@import url("https://fonts.googleapis.com/css?family=Bungee");
 $main-font: 'Lobster', LtBrown, serif;
 
 body {
@@ -12,9 +12,16 @@ body {
   background: -webkit-linear-gradient(left, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
   background: linear-gradient(to right, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
   font-family: $main-font;
+
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: #0f1bbb;
+  }
 }
 
-.twitch-logo{
+.twitch-logo {
   text-align: center;
   margin-top: 20px;
 
@@ -46,7 +53,7 @@ body {
     line-height: 21px;
     padding: 15px;
     border-radius: 9px;
-    font-family: 'Bungee', LtBrown, serif;;
+    font-family: 'Bungee', LtBrown, serif;
     font-weight: normal;
     text-decoration: none;
     font-style: normal;
@@ -61,10 +68,21 @@ body {
       background: #1C6EA4;
       cursor: pointer;
     }
+  }
+}
 
-    &:active {
-      background: #144E75;
-    }
+.search{
+  text-align: center;
+  margin: 10px;
+
+  input{
+    height: 30px;
+    width: 300px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-color: #144E75;
+    border-radius: 6px;
   }
 }
 
@@ -82,7 +100,8 @@ body {
     border-bottom: #FFFFFF;
 
     &:hover {
-      opacity: 0.6;
+      -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.82);
+      box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.82);
     }
 
     a {
@@ -92,12 +111,6 @@ body {
 
       &:hover {
         cursor: pointer;
-      }
-      &:visited{
-        color: inherit;
-      }
-      &:active{
-        color:inherit;
       }
     }
 

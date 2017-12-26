@@ -1,20 +1,23 @@
-let userNames = ["HardlyDifficult", "ESL_SC2", "OgamingSC2", "adobe", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb"];
-let getStatusURL = "https://api.twitch.tv/kraken/streams/";
-let clientID = "?client_id=b6s9axduwtlfj950a4jm43jh3vxyii&callback=";
-let channelURL = "https://api.twitch.tv/kraken/channels/"
+const userNames = ["HardlyDifficult", "ESL_SC2", "OgamingSC2", "adobe", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb"];
+const getStatusURL = "https://api.twitch.tv/kraken/streams/";
+const clientID = "?client_id=b6s9axduwtlfj950a4jm43jh3vxyii&callback=";
+const channelURL = "https://api.twitch.tv/kraken/channels/"
 
-
+//Run loop for all user names
 userNames.forEach(function(name) {
   function getURL(url) {
     return url + name + clientID
   }
 
+  //Send request to get online status
   $.ajax({
     type: 'GET',
     url: getURL(getStatusURL),
     success: function(getData) {
       let status;
       getData.stream !== null ? status = 'online' : status = 'offline';
+
+      //Send request to get information about the channel based on status
       $.ajax({
         type: 'GET',
         url: getURL(channelURL),
@@ -31,7 +34,7 @@ userNames.forEach(function(name) {
     }
   });
 });
-
+//Display all/online/offline channels when button clicked
 $(document).ready(function() {
   $('#all').click(function() {
     $('.online, .offline').removeClass('hidden');
@@ -43,5 +46,23 @@ $(document).ready(function() {
   $('#offline').click(function() {
     $('.offline').removeClass('hidden');
     $('.online').addClass('hidden');
+  });
+
+  //Search for channel
+  $('#search').keyup(function() {
+    let searchValue = $('#search').val();
+
+    $('.content a').each(function() {
+      if(searchValue == ''){
+        $('.container .content').show();
+      }
+      else if($(this).text().search(searchValue) > -1){
+        console.log(this);
+        $('.container .content').show();
+      }
+      else{
+        $('.container .content').hide();
+      }
+    });
   });
 });

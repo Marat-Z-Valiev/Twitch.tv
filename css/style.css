@@ -12,6 +12,13 @@ body {
   font-family: "Lobster", LtBrown, serif;
 }
 
+body a,
+body a:active,
+body a:hover,
+body a:visited {
+  color: #0f1bbb;
+}
+
 .twitch-logo {
   text-align: center;
   margin-top: 20px;
@@ -62,8 +69,19 @@ body {
   cursor: pointer;
 }
 
-.buttons .btn:active {
-  background: #144E75;
+.search {
+  text-align: center;
+  margin: 10px;
+}
+
+.search input {
+  height: 30px;
+  width: 300px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-color: #144E75;
+  border-radius: 6px;
 }
 
 .container {
@@ -82,7 +100,8 @@ body {
 }
 
 .container .content:hover {
-  opacity: 0.6;
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.82);
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.82);
 }
 
 .container .content a {
@@ -93,14 +112,6 @@ body {
 
 .container .content a:hover {
   cursor: pointer;
-}
-
-.container .content a:visited {
-  color: inherit;
-}
-
-.container .content a:active {
-  color: inherit;
 }
 
 .container .content img {
