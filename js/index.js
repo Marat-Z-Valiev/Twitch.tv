@@ -63,17 +63,19 @@ userNames.forEach(function(name) {
 $(document).ready(function() {
   $('#all').click(function() {
     $('.online, .offline').removeClass('hidden');
-    console.log($(this));
-    $(this).css('background-color:', '#6441a5');
+    $('#all').addClass('active');
+    $('#online, #offline').removeClass('active');
   });
   $('#online').click(function() {
     $('.online').removeClass('hidden');
     $('.offline').addClass('hidden');
-    $('.btn').css('background:', '#6441a5');
+    $('#online').addClass('active');
+    $('#all, #offline').removeClass('active');
   });
   $('#offline').click(function() {
     $('.offline').removeClass('hidden');
     $('.online').addClass('hidden');
-    $('.btn').css('background:', '#6441a5');
+    $('#offline').addClass('active');
+    $('#all, #online').removeClass('active');
   });
 });

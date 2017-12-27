@@ -51,13 +51,21 @@ body {
   text-decoration: none;
   font-style: normal;
   text-transform: none;
+  background-image: -webkit-gradient(linear, left top, right top, from(#1c6ea4), color-stop(50%, #2388cb), to(#144e75));
+  background-image: -webkit-linear-gradient(left, #1c6ea4 0%, #2388cb 50%, #144e75 100%);
+  background-image: -o-linear-gradient(left, #1c6ea4 0%, #2388cb 50%, #144e75 100%);
+  background-image: linear-gradient(to right, #1c6ea4 0%, #2388cb 50%, #144e75 100%);
   border: 2px solid #1c6ea4;
   display: inline-block;
 }
 
 .buttons .btn:hover {
-  background-color: #6441a5;
+  background: #6441a5;
   cursor: pointer;
+}
+
+.buttons .active {
+  background: #6441a5;
 }
 
 .search {
@@ -149,4 +157,19 @@ body {
 
 .container .offline {
   background-color: #D44D24;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin-right: 28%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body {
+    margin: 0;
+  }
+  .container .content {
+    width: 350px;
+  }
 }

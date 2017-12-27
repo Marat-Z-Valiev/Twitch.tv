@@ -52,17 +52,20 @@ body {
     text-decoration: none;
     font-style: normal;
     text-transform: none;
-    // background-image: -webkit-gradient(linear, left top, right top, from(rgb(28, 110, 164)), color-stop(50%, rgb(35, 136, 203)), to(rgb(20, 78, 117)));
-    // background-image: -webkit-linear-gradient(left, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
-    // background-image: -o-linear-gradient(left, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
-    // background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(28, 110, 164)), color-stop(50%, rgb(35, 136, 203)), to(rgb(20, 78, 117)));
+    background-image: -webkit-linear-gradient(left, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    background-image: -o-linear-gradient(left, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
     border: 2px solid rgb(28, 110, 164);
     display: inline-block;
 
     &:hover {
-      background-color: #6441a5;
+      background: #6441a5;
       cursor: pointer;
     }
+  }
+  .active{
+    background: #6441a5;
   }
 }
 
@@ -161,4 +164,22 @@ body {
   .offline {
     background-color: #D44D24;
   }
+}
+
+//Responsive design
+@media screen and (max-width: 768px) {
+  body{
+    margin-right: 28%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body{
+    margin: 0;
+  }
+.container{
+  .content{
+    width: 350px;
+  }
+}
 }
