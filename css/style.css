@@ -6,17 +6,11 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   background: #1C6EA4;
-  background: -moz-linear-gradient(left, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
   background: -webkit-linear-gradient(left, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#1C6EA4), color-stop(50%, #2388CB), to(#144E75));
+  background: -o-linear-gradient(left, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
   background: linear-gradient(to right, #1C6EA4 0%, #2388CB 50%, #144E75 100%);
   font-family: "Lobster", LtBrown, serif;
-}
-
-body a,
-body a:active,
-body a:hover,
-body a:visited {
-  color: #0f1bbb;
 }
 
 .twitch-logo {
@@ -56,16 +50,13 @@ body a:visited {
   font-weight: normal;
   text-decoration: none;
   font-style: normal;
-  font-variant-ligatures: normal;
-  font-variant-caps: normal;
   text-transform: none;
-  background-image: linear-gradient(to right, #1c6ea4 0%, #2388cb 50%, #144e75 100%);
   border: 2px solid #1c6ea4;
   display: inline-block;
 }
 
 .buttons .btn:hover {
-  background: #1C6EA4;
+  background-color: #6441a5;
   cursor: pointer;
 }
 
@@ -85,23 +76,38 @@ body a:visited {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+}
+
+.container a,
+.container a:active,
+.container a:hover,
+.container a:visited {
+  color: #0f1bbb;
 }
 
 .container .content {
   border: 2px solid #4A20D4;
   width: 500px;
   height: auto;
-  border-bottom: #FFFFFF;
 }
 
 .container .content:hover {
-  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.82);
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.82);
+  -webkit-box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.82);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.82);
 }
 
 .container .content a {
@@ -137,6 +143,7 @@ body a:visited {
 
 .container .online {
   background-color: #44D449;
+  -ms-flex-order: -1;
   order: -1;
 }
 

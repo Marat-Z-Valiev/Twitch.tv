@@ -23,7 +23,12 @@ userNames.forEach(function(name) {
         url: getURL(channelURL),
         success: function(data) {
           if (status === 'online') {
-            let onlineHtml = '<div class="content online"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="online-status-logo"><img src="images/online-64.png"></span><p class="status">' + data.game + ': ' + data.status + '</p></div>';
+            let statusTitle = data.status;
+            if(statusTitle.length > 18){
+              statusTitle = statusTitle.substring(0, 15);
+              statusTitle += '...';
+            }
+            let onlineHtml = '<div class="content online"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="online-status-logo"><img src="images/online-64.png"></span><p class="status">' + data.game + ': ' + statusTitle + '</p></div>';
             $('#content').append(onlineHtml);
           } else if (status === 'offline') {
             let offlineHtml = '<div class="content offline"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="offline-status-logo"><img src="images/offline-64.png"></div>';
@@ -34,35 +39,41 @@ userNames.forEach(function(name) {
     }
   });
 });
-//Display all/online/offline channels when button clicked
-$(document).ready(function() {
-  $('#all').click(function() {
-    $('.online, .offline').removeClass('hidden');
-  });
-  $('#online').click(function() {
-    $('.online').removeClass('hidden');
-    $('.offline').addClass('hidden');
-  });
-  $('#offline').click(function() {
-    $('.offline').removeClass('hidden');
-    $('.online').addClass('hidden');
-  });
+
 
   //Search for channel
   $('#search').keyup(function() {
     let searchValue = $('#search').val();
+    let regex = new RegExp(searchValue, "i");
 
-    $('.content a').each(function() {
-      if(searchValue == ''){
-        $('.container .content').show();
+    $('.content:not(.hidden)').each(function() {
+      if(searchValue === ''){
+        $(this).show();
       }
-      else if($(this).text().search(searchValue) > -1){
-        console.log(this);
-        $('.container .content').show();
+      else if($(this).text().search(regex) != -1){
+        $(this).show();
       }
       else{
-        $('.container .content').hide();
+        $(this).hide();
       }
     });
+  });
+
+//Display all/online/offline channels when button clicked
+$(document).ready(function() {
+  $('#all').click(function() {
+    $('.online, .offline').removeClass('hidden');
+    console.log($(this));
+    $(this).css('background-color:', '#6441a5');
+  });
+  $('#online').click(function() {
+    $('.online').removeClass('hidden');
+    $('.offline').addClass('hidden');
+    $('.btn').css('background:', '#6441a5');
+  });
+  $('#offline').click(function() {
+    $('.offline').removeClass('hidden');
+    $('.online').addClass('hidden');
+    $('.btn').css('background:', '#6441a5');
   });
 });
