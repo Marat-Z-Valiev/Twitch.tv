@@ -169,17 +169,47 @@ body {
 //Responsive design
 @media screen and (max-width: 768px) {
   body{
-    margin-right: 28%;
+    // margin-right: 28%;
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
   body{
     margin: 0;
   }
+
+  .twitch-logo {
+    img {
+      width: 350px;
+    }
+  }
+
 .container{
   .content{
     width: 350px;
   }
 }
+}
+
+@media screen and (max-width: 359px) {
+  .twitch-logo {
+    img {
+      width: 300px;
+    }
+  }
+  .buttons{
+    .btn{
+      padding: 10px;
+    }
+  }
+  .search{
+    input{
+      width: 250px;
+    }
+  }
+  .container{
+    .content{
+      width: 300px;
+    }
+  }
 }
