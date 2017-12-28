@@ -1,0 +1,1 @@
+Twitch.tv allows the user to see online/offline channels using Twitch API.
