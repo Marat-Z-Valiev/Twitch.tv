@@ -28,10 +28,10 @@ userNames.forEach(function(name) {
               statusTitle = statusTitle.substring(0, 15);
               statusTitle += '...';
             }
-            let onlineHtml = '<div class="content online"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="online-status-logo"><img src="images/online-64.png"></span><p class="status">' + data.game + ': ' + statusTitle + '</p></div>';
+            let onlineHtml = '<div class="content online"><span class="logo"><img src="' + data.logo + '" alt="channel-logo"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="online-status-logo"><img src="images/online-64.png" alt="online-icon"></span><p class="status">' + data.game + ': ' + statusTitle + '</p></div>';
             $('#content').append(onlineHtml);
           } else if (status === 'offline') {
-            let offlineHtml = '<div class="content offline"><span class="logo"><img src="' + data.logo + '"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="offline-status-logo"><img src="images/offline-64.png"></div>';
+            let offlineHtml = '<div class="content offline"><span class="logo"><img src="' + data.logo + '" alt="channel-logo"></span><a href="' + data.url + '" target="_blank">' + data.display_name + '</a><span class="offline-status-logo"><img src="images/offline-64.png" alt="offline-icon"></div>';
             $('#content').append(offlineHtml);
           }
         }
